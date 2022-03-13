@@ -5,6 +5,7 @@ public class InsufficientFundsException extends Exception {
 
     InsufficientFundsException(String err)
     {
+        super(err);
         this.error = err;
     }
     
