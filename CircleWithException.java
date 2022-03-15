@@ -7,19 +7,19 @@ class CircleWithException
     private static final double maxRadius = Math.sqrt(1000.0 / Math.PI);
     public CircleWithException(double radius) throws Exception
     {
-        if(radius < 0)
-            {throw new IllegalArgumentException("No negative radius is allowed");} 
+        if(radius <= 0.0)
+            {throw new IllegalArgumentException("Only positive radius is allowed");} 
         if(radius > CircleWithException.maxRadius)
-            {throw new Exception("Radius with area greater than 1000 is not allowed");} 
+            {throw new Exception("Radius of circle that has area greater than 1000 is not allowed");} 
         this.radius = radius;
     }
     //  Design the method to set the radius of the circle.
     public void setRadius(double radius) throws Exception
     {
-        if(radius < 0.0)
-            {throw new IllegalArgumentException("No negative radius is allowed");} 
+        if(radius <= 0.0)
+            {throw new IllegalArgumentException("Only positive radius is allowed");} 
         if(radius > CircleWithException.maxRadius)
-            {throw new Exception("Radius with area greater than 1000 is not allowed");} 
+            {throw new Exception("Radius of circle that has area greater than 1000 is not allowed");} 
         this.radius = radius;
     }
     // Design the method to get the radius of the circle

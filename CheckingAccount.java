@@ -15,14 +15,21 @@ public class CheckingAccount
         this.balance = balance;
     }
 
-    public void deposit(double deposit)
+    public void deposit(double deposit) throws InsufficientFundsException
     {
-        if( deposit>=0 )  this.balance += deposit;
+        if( deposit>0 )
+        {
+            this.balance += deposit;
+        }
+        else
+        {
+            throw new InsufficientFundsException("Deposit amount must be greater than zero!");
+        }
     }
 
     public void withdraw(double withdrawal) throws InsufficientFundsException
     {
-        if(withdrawal >=0 )
+        if(withdrawal >0 )
         {
             if(withdrawal > this.balance)
             {
@@ -32,6 +39,10 @@ public class CheckingAccount
             {
                 this.balance -= withdrawal;
             }
+        }
+        else
+        {
+            throw new InsufficientFundsException("Withdrawal amount must be greater than zero!");
         }
     }
 
